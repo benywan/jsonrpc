@@ -1,0 +1,26 @@
+[package]
+name = "jsonrpc-ipc-server"
+description = "IPC server for JSON-RPC"
+version = "8.0.0"
+authors = ["Nikolay Volf <nikvolf@gmail.com>"]
+license = "MIT"
+homepage = "https://github.com/paritytech/jsonrpc"
+repository = "https://github.com/paritytech/jsonrpc"
+documentation = "https://paritytech.github.io/jsonrpc/json_ipc_server/index.html"
+
+[dependencies]
+log = "0.3"
+tokio-service = "0.1"
+jsonrpc-core = { version = "8.0", path = "../core" }
+jsonrpc-server-utils = { version = "8.0", path = "../server-utils" }
+parity-tokio-ipc = { git = "https://github.com/nikvolf/parity-tokio-ipc" }
+
+[dev-dependencies]
+env_logger = "0.4"
+lazy_static = "0.2"
+
+[target.'cfg(not(windows))'.dev-dependencies]
+tokio-uds = "0.1"
+
+[badges]
+travis-ci = { repository = "paritytech/jsonrpc", branch = "master"}
