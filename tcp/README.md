@@ -9,16 +9,18 @@ TCP server for JSON-RPC 2.0.
 
 ```
 [dependencies]
-jsonrpc-tcp-server = { git = "https://github.com/paritytech/jsonrpc" }
+jsonrpc-core = "6.0"
+jsonrpc-tcp-server = "6.0"
 ```
 
 `main.rs`
 
 ```rust
+extern crate jsonrpc_core;
 extern crate jsonrpc_tcp_server;
 
+use jsonrpc_core::*;
 use jsonrpc_tcp_server::*;
-use jsonrpc_tcp_server::jsonrpc_core::*;
 
 fn main() {
 	let mut io = IoHandler::default();

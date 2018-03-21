@@ -1,7 +1,8 @@
+extern crate jsonrpc_core;
 extern crate jsonrpc_tcp_server;
 
+use jsonrpc_core::*;
 use jsonrpc_tcp_server::ServerBuilder;
-use jsonrpc_tcp_server::jsonrpc_core::*;
 
 fn main() {
 	let mut io = IoHandler::default();
